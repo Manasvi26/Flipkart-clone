@@ -61,12 +61,12 @@ const CustomButtons = () => {
 
       <Typography style={{ marginTop: 5 }}>More</Typography>
 
-      <Box className={classes.container}>
+      <Link to="/cart" className={classes.container}>
         <Badge badgeContent={2} color="secondary">
           <ShoppingCart />
         </Badge>
         <Typography style={{ marginLeft: 10 }}>Cart</Typography>
-      </Box>
+      </Link>
     </Box>
   );
 };

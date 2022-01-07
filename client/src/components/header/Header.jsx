@@ -88,7 +88,7 @@ const Header = () => {
 
         <Drawer></Drawer>
 
-        <Box className={classes.component}>
+        <Link to="/" className={classes.component}>
           <img src={logoURL} className={classes.logo} />
           <Box component="span" className={classes.container}>
             <Typography className={classes.subHeading}>
@@ -99,7 +99,7 @@ const Header = () => {
             </Typography>
             <img src={subURL} className={classes.subURL} />
           </Box>
-        </Box>
+        </Link>
         <Search />
         <span className={classes.customButtons}>
           <CustomButtons />
