@@ -55,11 +55,15 @@ const CustomButtons = () => {
 
   return (
     <Box className={classes.wrapper}>
-      <Button className={classes.login} variant="contained">
-        Login
-      </Button>
+      <Link>
+        <Button className={classes.login} variant="contained">
+          Login
+        </Button>
+      </Link>
 
-      <Typography style={{ marginTop: 5 }}>More</Typography>
+      <Link>
+        <Typography style={{ marginTop: 5 }}>More</Typography>
+      </Link>
 
       <Link to="/cart" className={classes.container}>
         <Badge badgeContent={2} color="secondary">
