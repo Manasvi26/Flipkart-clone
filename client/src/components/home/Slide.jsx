@@ -35,7 +35,6 @@ const useStyles = makeStyles({
   image: {
     width: "auto",
     height: 150,
-    overflow: "visible",
   },
 
   text: {
@@ -45,7 +44,6 @@ const useStyles = makeStyles({
   deal: {
     display: "flex",
     padding: "15px 20px",
-    marginBottom: 50,
   },
   dealText: {
     fontSize: 22,
@@ -62,14 +60,14 @@ const useStyles = makeStyles({
   },
   wrapper: {
     margin: "auto",
-    padding: "25px 15px",
+    padding: "35px 15px",
     // paddingTop: 20,
     // height: "220px",
     // border: "2px solid red",
   },
 });
 
-const Slide = () => {
+const Slide = ({ timer, title }) => {
   const classes = useStyles();
   const timerURL =
     "https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/timer_a73398.svg";
@@ -85,14 +83,23 @@ const Slide = () => {
   return (
     <Box className={classes.component}>
       <Box className={classes.deal}>
-        <Typography className={classes.dealText}>Deals of the day</Typography>
-        <img src={timerURL} style={{ width: 24 }} alt="time clock" />
-        <Countdown date={Date.now() + 5.04e7} renderer={renderer} />
-        <Button varient="contained" color="primary" className={classes.button}>
-          View All
-        </Button>
-        <Divider />
+        <Typography className={classes.dealText}>{title}</Typography>
+
+        {timer && (
+          <>
+            <img src={timerURL} style={{ width: 24 }} alt="time clock" />
+            <Countdown date={Date.now() + 5.04e7} renderer={renderer} />
+            <Button
+              varient="contained"
+              color="primary"
+              className={classes.button}
+            >
+              View All
+            </Button>
+          </>
+        )}
       </Box>
+      <Divider />
       <Carousel
         responsive={responsive}
         infinite={true}
@@ -105,10 +112,9 @@ const Slide = () => {
         keyBoardControl={true}
         showDots={false}
         containerClass="carousel-container"
-        removeArrowOnDeviceType={["tablet", "mobile"]}
+        // removeArrowOnDeviceType={["tablet", "mobile"]}
         dotListClass="custom-dot-list-style"
         itemClass="carousel-item-padding-40-px"
-        className={classes.image}
       >
         {products.map((product) => (
           <Box textAlign="center" className={classes.wrapper}>

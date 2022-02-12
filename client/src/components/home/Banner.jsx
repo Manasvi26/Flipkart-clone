@@ -20,8 +20,11 @@ const Banner = () => {
     <Carousel
       autoPlay={true}
       animation="slide"
+      // animation="fade"
       indicators={false}
       navButtonsAlwaysVisible={true}
+      interval={3000}
+      // duration={1000}
       cycleNavigation={true}
       navButtonsProps={{
         style: {
